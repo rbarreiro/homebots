@@ -12,8 +12,8 @@
 #include "soc/rtc_cntl_reg.h"
 
 // Setup Access Point Credentials
-const char* ssid1 = "ESP32-CAM Robot";
-const char* password1 = "1234567890";
+const char* ssid1 = "MEO-F51500";
+const char* password1 = "7b82f8f1ac";
 
 extern volatile unsigned int  motor_speed;
 extern void robot_stop();
@@ -98,7 +98,8 @@ void setup()
   s->set_vflip(s, 1);
   s->set_hmirror(s, 1);
 
-  WiFi.softAP(ssid1, password1);
+  
+  WiFi.begin(ssid1, password1);
   IPAddress myIP = WiFi.softAPIP();
   Serial.print("AP IP address: ");
   Serial.println(myIP);
